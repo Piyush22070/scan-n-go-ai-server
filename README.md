@@ -11,51 +11,53 @@ A modular, production-grade backend system for a smart retail environment that u
 ---
 
 ## Project Structure
-
 smart-retail-backend/
 ├── app/
 │   ├── __init__.py
-│   ├── main.py                  # Entry point (FastAPI app)
-│   ├── api/                     # All API route definitions
+│   ├── main.py                     # Entry point for FastAPI
+│   ├── api/                        # API route definitions
 │   │   ├── __init__.py
-│   │   ├── v1/
-│   │   │   ├── __init__.py
-│   │   │   ├── detect.py        # YOLO detection endpoints
-│   │   │   ├── billing.py       # Checkout, NFT, payment
-│   │   │   ├── inventory.py     # Stock, warehouse APIs
-│   │   │   ├── kpi.py           # Dashboard metrics
-│   │   │   └── iot.py           # IoT sensor data APIs
-│   ├── core/                    # Core config, constants
-│   │   ├── config.py            # Env vars, settings
-│   │   └── logger.py            # Logging setup
-│   ├── services/                # Business logic / external service wrappers
-│   │   ├── yolo_service.py      # YOLOv8 logic (Ultralytics or custom)
-│   │   ├── blockchain_service.py# Web3.py functions (NFT, billing)
-│   │   ├── inventory_service.py # Restock prediction, shelf logic
-│   │   └── iot_handler.py       # Sensor input validation
-│   ├── models/                  # Pydantic models (schemas)
+│   │   └── v1/                     # Versioned API group
+│   │       ├── __init__.py
+│   │       ├── detect.py           # YOLO detection endpoint
+│   │       ├── billing.py          # Checkout and billing logic
+│   │       ├── inventory.py        # Warehouse inventory APIs
+│   │       ├── kpi.py              # KPI and analytics endpoints
+│   │       ├── iot.py              # IoT sensor data ingestion
+│   │       └── demo.py             # Hello or test endpoints
+│   ├── core/                       # Global settings and logging
+│   │   ├── config.py               # App configuration
+│   │   └── logger.py               # Logger setup
+│   ├── services/                   # Business logic & integrations
+│   │   ├── yolo_service.py         # YOLOv8 detection logic
+│   │   ├── blockchain_service.py   # Blockchain/NFT logic
+│   │   ├── inventory_service.py    # Stock prediction, restock logic
+│   │   └── iot_handler.py          # IoT data validation
+│   ├── models/                     # Pydantic schemas
 │   │   ├── __init__.py
-│   │   ├── base.py              # Shared base schema
+│   │   ├── base.py
 │   │   ├── detect.py
 │   │   ├── billing.py
 │   │   └── inventory.py
-│   ├── db/                      # If using database (Postgres, Mongo)
+│   ├── db/                         # (Optional) database config/models
 │   │   ├── database.py
-│   │   └── models.py            # SQLAlchemy or ODM models
-│   ├── tasks/                   # Background tasks (Celery, APScheduler)
+│   │   └── models.py
+│   ├── tasks/                      # Background tasks or schedulers
 │   │   ├── __init__.py
-│   │   └── retrain_model.py     # ML retraining, batch jobs
-│   └── utils/                   # Utility functions
+│   │   └── retrain_model.py        # For ML retraining jobs
+│   └── utils/                      # Utility/helper functions
 │       ├── file_ops.py
 │       └── image_utils.py
-├── scripts/                     # Helper scripts (data ingest, dev setup)
+├── scripts/                        # Data setup or automation scripts
 │   └── init_db.py
-├── static/                      # Saved images, frames, logs
-├── .env                         # Environment variables
-├── requirements.txt
-├── Dockerfile                   # Docker image setup
-├── docker-compose.yml           # Optional: DB + app + inference
+├── static/                         # Logs, annotated images, receipts
+├── .env                            # Environment variables
+├── .gitignore                      # Git ignore rules
+├── requirements.txt                # Python dependencies
+├── Dockerfile                      # Container definition
+├── docker-compose.yml              # Optional: services setup
 └── README.md
+
 
 
 ## Features
