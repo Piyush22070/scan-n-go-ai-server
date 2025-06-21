@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# VSCode / IDE config
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+static/logs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# YOLO models / checkpoints
+runs/
+*.pt
+*.weights
+
+# Cached data / temp
+*.tmp
+*.bak
+
+# Jupyter/IPython
+.ipynb_checkpoints
+
+# MyPy / Pyright
+.mypy_cache/
+.pyright/
+
+# pytest / coverage
+.cache/
+.coverage
+htmlcov/
+*.cover
+*.pyc
+
+# Database files (optional)
+*.sqlite3
+*.db
+__data__/
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
